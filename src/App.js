@@ -44,7 +44,7 @@ function App() {
       console.log("Lets check them out!\n", bard)
     }, 500)
     
-  }, []);
+  }, [bard]);
 
 
 
