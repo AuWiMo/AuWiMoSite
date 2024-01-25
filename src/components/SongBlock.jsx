@@ -20,7 +20,7 @@ const SongBlock = ({ blockId, bard, setBard }) => {
   const handlePlayButton = () => {
     // Assuming the YouTube video URL is in the format https://www.youtube.com/watch?v=VIDEO_ID
     // or with timecode format https://youtu.be/VIDEO_ID?t=TIME_IN_SECONDS
-    const videoIdMatch = /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/.exec(songName);
+    const videoIdMatch = /(?:youtube\.com\/(?:[^/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/.exec(songName);
 
     if (videoIdMatch && videoIdMatch[1]) {
       setVideoId(videoIdMatch[1]);
