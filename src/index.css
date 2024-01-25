@@ -1,0 +1,33 @@
+body {
+  /* background-color: #3d6e9a; */
+  background-color: #52ACFF;
+  background-image: linear-gradient(40deg, #0b4983 10%, #1560a7 25%, #1b73c4 45%, #52ACFF 90%, #62daff 110%);
+  background-attachment: fixed; 
+  height: 100vh;
+  margin: 0; 
+}
+
+.songbuttons {
+  padding-inline: 10px;
+  margin-inline: 10px;
+  background: lightblue;
+  outline: none;
+  border: 2px solid #709bb3; 
+}
+
+.songbuttons::placeholder {
+  color: black;
+}
+
+.songbuttons:hover {
+  border: 2px solid #658ea4;
+  background: rgb(197, 225, 234)
+}
+
+.songbuttons:disabled {
+  background: lightblue;
+  outline: none;
+  border: 2px solid #709bb3; 
+}
+
+
