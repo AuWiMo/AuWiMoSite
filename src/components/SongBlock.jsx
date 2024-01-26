@@ -101,7 +101,8 @@ const SongBlock = ({ blockId }) => {
     document.getElementById(`saveButton_${blockId}`).style.display = 'none';
     document.getElementById(`deleteButton_${blockId}`).style.display = 'none';
     
-    let newBard = JSON.parse(localStorage.getItem(bard))
+    let newBard = JSON.parse(localStorage.getItem('bard'))
+    console.log("newbard is", newBard)
     let newSpell = {
       name: spellName,
       url: songName
@@ -120,7 +121,7 @@ const SongBlock = ({ blockId }) => {
   // apparently pointer based, changing start time successfully sets it
   opts.playerVars.start = startTime;
   
-
+  
   
 
   return (
@@ -139,7 +140,6 @@ const SongBlock = ({ blockId }) => {
         type="text"
         id={`spellName_${blockId}`}
         onChange={handleSpellChange}
-        disabled
         className="songbuttons"
         placeholder="Spell Name"
         autoComplete="off"
@@ -151,13 +151,13 @@ const SongBlock = ({ blockId }) => {
         id={`songInput_${blockId}`}
         onChange={handleUrlChange}
         className="songbuttons"
-        style={{display: "none"}}
+        style={{display: "block"}}
         placeholder="Enter Youtube URL"
         autoComplete="off"
         value={songName}
         
       />
-      <button id={`playButton_${blockId}`} onClick={handlePlayButton} className="songbuttons">Start Casting</button>
+      <button id={`playButton_${blockId}`} onClick={handlePlayButton} className="songbuttons"  style={{ display:"none"}}>Start Casting</button>
 
       <button id={`stopButton_${blockId}`} onClick={handleStopButton} className="songbuttons" style={{ 
         display: "none", 
@@ -168,9 +168,9 @@ const SongBlock = ({ blockId }) => {
         backgroundImage: "linear-gradient(40deg, #0b4983 10%, #1560a7 25%, #1b73c4 45%, #52ACFF 90%, #62daff 110%)"
       }}> Stop Casting </button>
       
-      <button id={`editButton_${blockId}`} onClick={handleEditButton} className="songbuttons">Edit</button>
-      <button id={`deleteButton_${blockId}`} onClick={handleDeleteButton} className="songbuttons" style={{ display:"none"}}>Delete</button>
-      <button id={`saveButton_${blockId}`} onClick={handleSaveButton} className="songbuttons"  style={{ display: "none"}}>Save Spell</button>
+      <button id={`editButton_${blockId}`} onClick={handleEditButton} className="songbuttons" style={{ display:"none"}}>Edit</button>
+      <button id={`deleteButton_${blockId}`} onClick={handleDeleteButton} className="songbuttons" style={{ display:"block"}}>Delete</button>
+      <button id={`saveButton_${blockId}`} onClick={handleSaveButton} className="songbuttons"  style={{ display: "block"}}>Save Spell</button>
       {videoId && <YouTube videoId={videoId} opts={opts} style={{ display:"none"}} />}
     </div>
   );

@@ -21,13 +21,13 @@ function App() {
     if (bardStored) {
       console.log("Bard encountered:", bardStored);
       setBard(bardStored)
-      localStorage.setItem('bard', bardStored)
+      localStorage.setItem('bard', JSON.stringify(bardStored))
 
       let numSpells = bardStored.length
       console.log("Number of spells: ", numSpells)
 
       let i = 0;
-      while (i < numSpells) {
+      while (i < numSpells - 1) {
         addSongBlock()
         i++
       }
