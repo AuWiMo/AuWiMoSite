@@ -48,37 +48,49 @@ const SongBlock = ({ blockId }) => {
     setSongName(e.target.value);
   };
 
+  const [isPlaying, setIsPlaying] = useState(false);
+
   const handlePlayButton = () => {
-    // Assuming the YouTube video URL is in the format https://www.youtube.com/watch?v=VIDEO_ID
-    // or with timecode format https://youtu.be/VIDEO_ID?t=TIME_IN_SECONDS
     const videoIdMatch = /(?:youtube\.com\/(?:[^/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/.exec(songName);
 
     if (videoIdMatch && videoIdMatch[1]) {
       setVideoId(videoIdMatch[1]);
 
-      // Check for timecode in the URL
       const timecodeMatch = /(?:t=)(\d+)/.exec(songName);
-      // console.log("Timecode Match", timecodeMatch)
       if (timecodeMatch && timecodeMatch[1]) {
         setStartTime(parseInt(timecodeMatch[1], 10));
       } else {
         setStartTime(0);
       }
-      document.getElementById(`playButton_${blockId}`).style.display = 'none';
-      document.getElementById(`stopButton_${blockId}`).style.display = 'flex';
 
+      // Update state to indicate playing
+      setIsPlaying(true);
     } else {
       console.error('Invalid YouTube URL');
     }
   };
 
-
   const handleStopButton = () => {
     setVideoId('');
     setStartTime(0);
-    document.getElementById(`playButton_${blockId}`).style.display = 'flex';
-    document.getElementById(`stopButton_${blockId}`).style.display = 'none';
+
+    // Update state to indicate not playing
+    setIsPlaying(false);
   };
+
+  useEffect(() => {
+    // Use useEffect to update the button display based on the isPlaying state
+    const playButton = document.getElementById(`playButton_${blockId}`);
+    const stopButton = document.getElementById(`stopButton_${blockId}`);
+
+    if (isPlaying) {
+      playButton.style.display = 'none';
+      stopButton.style.display = 'flex';
+    } else {
+      playButton.style.display = 'flex';
+      stopButton.style.display = 'none';
+    }
+  }, [isPlaying, blockId]);
 
   const handleEditButton = () => {
     // You can perform actions with the songName here
