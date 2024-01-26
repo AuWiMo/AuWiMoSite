@@ -96,6 +96,7 @@ const SongBlock = ({ blockId }) => {
     let newBard = JSON.parse(localStorage.getItem('bard'))
     newBard.splice(blockId, 1)
     localStorage.setItem('bard', JSON.stringify(newBard))
+    window.location.reload();
   };
   
   const handleSaveButton = () => {
