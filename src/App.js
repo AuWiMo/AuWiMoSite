@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect  } from 'react';
 import SongBlock from './components/SongBlock'; 
 import Footer from './components/Footer'; 
 import colors from './components/colors';
@@ -12,8 +12,6 @@ function App() {
     console.log("\naddSongBlock called");
     setSongBlocks((prevSongBlocks) => [...prevSongBlocks, prevSongBlocks.length + 1]);
   };
-
-
 
   useEffect(() => {
     // Code to run on page load
@@ -32,8 +30,6 @@ function App() {
         i++
       }
 
-
-
     } else {
       console.log("Let's create a bard!");
       addSongBlock()
@@ -43,19 +39,12 @@ function App() {
     
   }, []);
 
-
-    
-    
-  
-
-
-
   return (
     
     <div style={{ display:'flex', flexDirection:"column", alignItems: 'center', justifyContent: 'center' }}>
       <h1 style={{ color: colors.yellow, textShadow: `2px 2px 4px black`, }}>Bardic Songbook</h1>
       {songBlocks.map((blockId) => (
-        <SongBlock key={blockId} blockId={blockId}/>
+        <SongBlock key={blockId} blockId={blockId} />
       ))}
       <button onClick={addSongBlock}  style={{ width: "max-content", margin: '10px', marginBlockEnd: '100px' }} className="songbuttons" >New Song</button>
       <Footer/>

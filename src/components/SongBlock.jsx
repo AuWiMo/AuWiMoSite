@@ -1,5 +1,5 @@
 // SongBlock.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import YouTube from 'react-youtube';
 import colors from './colors';
 
@@ -9,7 +9,8 @@ const SongBlock = ({ blockId }) => {
     console.log("creating the bard array")
     let spell1 = {
       name: "",
-      url: ""
+      url: "",
+      old: false
     }
     let bard = [spell1]
     localStorage.setItem('bard', JSON.stringify(bard))
@@ -20,7 +21,8 @@ const SongBlock = ({ blockId }) => {
     let newBard = JSON.parse(localStorage.getItem('bard'))
     let newSpell = {
       name: "",
-      url: ""
+      url: "",
+      old: false
     }
     newBard[blockId] = newSpell
     localStorage.setItem('bard', JSON.stringify(newBard))
@@ -33,6 +35,10 @@ const SongBlock = ({ blockId }) => {
   const [songName, setSongName] = useState(bard[blockId].url);
   const [videoId, setVideoId] = useState('');
   const [startTime, setStartTime] = useState(0);  
+
+  useEffect(() => {
+    if (bard[blockId].old) { handleSaveButton() }
+  })
   
   const handleSpellChange = (e) => {
     setSpellName(e.target.value);
@@ -87,8 +93,9 @@ const SongBlock = ({ blockId }) => {
 
   const handleDeleteButton = () => {
     // You can perform actions with the songName here
-    
-
+    let newBard = JSON.parse(localStorage.getItem('bard'))
+    newBard.splice(blockId, 1)
+    localStorage.setItem('bard', JSON.stringify(newBard))
   };
   
   const handleSaveButton = () => {
@@ -105,7 +112,8 @@ const SongBlock = ({ blockId }) => {
     console.log("newbard is", newBard)
     let newSpell = {
       name: spellName,
-      url: songName
+      url: songName,
+      old: true
     }
     newBard[blockId] = newSpell
     localStorage.setItem('bard', JSON.stringify(newBard))
