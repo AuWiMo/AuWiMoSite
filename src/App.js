@@ -7,7 +7,6 @@ import logo from './components/logo.png';
 function App() {
   document.title = "Bardic Songbook";
   const [songBlocks, setSongBlocks] = useState([]);
-  const [bard, setBard] = useState([]);
 
   const addSongBlock = () => {
     console.log("\naddSongBlock called");
@@ -19,7 +18,6 @@ function App() {
     let bardStored = JSON.parse(localStorage.getItem("bard"));
     if (bardStored) {
       console.log("Bard encountered:", bardStored);
-      setBard(bardStored)
       localStorage.setItem('bard', JSON.stringify(bardStored))
 
       let numSpells = bardStored.length
