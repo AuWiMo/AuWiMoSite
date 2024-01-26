@@ -49,7 +49,7 @@ function App() {
           alt="Logo"
           style={{ width: '64px', height: '64px' }}
         />
-        <h1 style={{ color: colors.yellow, textShadow: `2px 2px 4px black`, marginInlineEnd: "64px" }}>Bardic Songbook</h1>
+        <h1 style={{ color: colors.yellow, textShadow: `2px 2px 4px black`, marginInlineEnd: "64px" }}>The Bardic Songbook</h1>
 
       </div>
       {songBlocks.map((blockId) => (
