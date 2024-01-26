@@ -3,26 +3,36 @@ import React, { useState } from 'react';
 import YouTube from 'react-youtube';
 import colors from './colors';
 
-const SongBlock = ({ blockId, bard, setBard }) => {
-  if (!bard[blockId]) {
-    let newBard = bard
+const SongBlock = ({ blockId }) => {
+  console.log("top of songblock")
+  if (!localStorage.getItem('bard')) {
+    console.log("creating the bard array")
+    let spell1 = {
+      name: "",
+      url: ""
+    }
+    let bard = [spell1]
+    localStorage.setItem('bard', JSON.stringify(bard))
+    console.log("Created a new bard with 1 spell", bard)
+  }
+  if (!(JSON.parse(localStorage.getItem('bard'))[blockId])) {
+    console.log("No spell exists with id ", (blockId))
+    let newBard = JSON.parse(localStorage.getItem('bard'))
     let newSpell = {
       name: "",
       url: ""
     }
     newBard[blockId] = newSpell
-    setBard(newBard)
+    localStorage.setItem('bard', JSON.stringify(newBard))
     console.log("Saving bard", newBard)
   }
 
+  let bard = JSON.parse(localStorage.getItem('bard'))
+  console.log(bard, "looking at", blockId)
   const [spellName, setSpellName] = useState(bard[blockId].name);
   const [songName, setSongName] = useState(bard[blockId].url);
   const [videoId, setVideoId] = useState('');
-  const [startTime, setStartTime] = useState(0);
-
-  console.log("Making song block", blockId, "for", bard)
-  console.log("Spell name is", bard[blockId].name)
-  
+  const [startTime, setStartTime] = useState(0);  
   
   const handleSpellChange = (e) => {
     setSpellName(e.target.value);
@@ -71,7 +81,8 @@ const SongBlock = ({ blockId, bard, setBard }) => {
     document.getElementById(`editButton_${blockId}`).style.display = 'none';
     document.getElementById(`saveButton_${blockId}`).style.display = 'block';
     document.getElementById(`playButton_${blockId}`).style.display = 'none';
-    
+    document.getElementById(`deleteButton_${blockId}`).style.display = 'block';
+
   };
 
   const handleDeleteButton = () => {
@@ -82,24 +93,22 @@ const SongBlock = ({ blockId, bard, setBard }) => {
   
   const handleSaveButton = () => {
     console.log(`Selected Song: ${songName}`);
+
     document.getElementById(`spellName_${blockId}`).disabled = true;
     document.getElementById(`songInput_${blockId}`).style.display = 'none';
     document.getElementById(`playButton_${blockId}`).style.display = 'block';
     document.getElementById(`editButton_${blockId}`).style.display = 'block';
     document.getElementById(`saveButton_${blockId}`).style.display = 'none';
-
+    document.getElementById(`deleteButton_${blockId}`).style.display = 'none';
     
-    let newBard = bard
+    let newBard = JSON.parse(localStorage.getItem(bard))
     let newSpell = {
       name: spellName,
       url: songName
     }
     newBard[blockId] = newSpell
-    setBard(newBard)
     localStorage.setItem('bard', JSON.stringify(newBard))
     console.log("Saving bard", newBard)
-
-
 
   };
 
@@ -108,7 +117,6 @@ const SongBlock = ({ blockId, bard, setBard }) => {
       autoplay: 1,
     },
   };
-
   // apparently pointer based, changing start time successfully sets it
   opts.playerVars.start = startTime;
   
