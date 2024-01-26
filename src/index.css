@@ -15,9 +15,6 @@ body {
   border: 2px solid #709bb3; 
 }
 
-.songbuttons::placeholder {
-  color: black;
-}
 
 .songbuttons:hover {
   border: 2px solid #658ea4;
@@ -27,7 +24,8 @@ body {
 .songbuttons:disabled {
   background: lightblue;
   outline: none;
-  border: 2px solid #709bb3; 
+  border: 2px solid #709bb3;
+  color: black;
 }
 
 

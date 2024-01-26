@@ -4,10 +4,25 @@ import YouTube from 'react-youtube';
 import colors from './colors';
 
 const SongBlock = ({ blockId, bard, setBard }) => {
-  const [spellName, setSpellName] = useState('Spell Name');
-  const [songName, setSongName] = useState('Enter YouTube URL');
+  if (!bard[blockId]) {
+    let newBard = bard
+    let newSpell = {
+      name: "",
+      url: ""
+    }
+    newBard[blockId] = newSpell
+    setBard(newBard)
+    console.log("Saving bard", newBard)
+  }
+
+  const [spellName, setSpellName] = useState(bard[blockId].name);
+  const [songName, setSongName] = useState(bard[blockId].url);
   const [videoId, setVideoId] = useState('');
   const [startTime, setStartTime] = useState(0);
+
+  console.log("Making song block", blockId, "for", bard)
+  console.log("Spell name is", bard[blockId].name)
+  
   
   const handleSpellChange = (e) => {
     setSpellName(e.target.value);
@@ -27,7 +42,7 @@ const SongBlock = ({ blockId, bard, setBard }) => {
 
       // Check for timecode in the URL
       const timecodeMatch = /(?:t=)(\d+)/.exec(songName);
-      console.log("Timecode Match", timecodeMatch)
+      // console.log("Timecode Match", timecodeMatch)
       if (timecodeMatch && timecodeMatch[1]) {
         setStartTime(parseInt(timecodeMatch[1], 10));
       } else {
@@ -55,23 +70,37 @@ const SongBlock = ({ blockId, bard, setBard }) => {
     document.getElementById(`songInput_${blockId}`).style.display = 'flex';
     document.getElementById(`editButton_${blockId}`).style.display = 'none';
     document.getElementById(`saveButton_${blockId}`).style.display = 'block';
+    document.getElementById(`playButton_${blockId}`).style.display = 'none';
+    
+  };
+
+  const handleDeleteButton = () => {
+    // You can perform actions with the songName here
+    
+
   };
   
   const handleSaveButton = () => {
     console.log(`Selected Song: ${songName}`);
     document.getElementById(`spellName_${blockId}`).disabled = true;
     document.getElementById(`songInput_${blockId}`).style.display = 'none';
+    document.getElementById(`playButton_${blockId}`).style.display = 'block';
     document.getElementById(`editButton_${blockId}`).style.display = 'block';
     document.getElementById(`saveButton_${blockId}`).style.display = 'none';
 
     
     let newBard = bard
-    newBard["spell" + blockId] = {
+    let newSpell = {
       name: spellName,
       url: songName
     }
+    newBard[blockId] = newSpell
     setBard(newBard)
-    console.log("Saving bard", bard)
+    localStorage.setItem('bard', JSON.stringify(newBard))
+    console.log("Saving bard", newBard)
+
+
+
   };
 
   const opts = {
@@ -107,7 +136,7 @@ const SongBlock = ({ blockId, bard, setBard }) => {
         placeholder="Spell Name"
         autoComplete="off"
         onClick={handlePlayButton}
-        
+        value={spellName}
       />
       <input 
         type="text"
@@ -117,6 +146,7 @@ const SongBlock = ({ blockId, bard, setBard }) => {
         style={{display: "none"}}
         placeholder="Enter Youtube URL"
         autoComplete="off"
+        value={songName}
         
       />
       <button id={`playButton_${blockId}`} onClick={handlePlayButton} className="songbuttons">Start Casting</button>
@@ -131,7 +161,8 @@ const SongBlock = ({ blockId, bard, setBard }) => {
       }}> Stop Casting </button>
       
       <button id={`editButton_${blockId}`} onClick={handleEditButton} className="songbuttons">Edit</button>
-      <button id={`saveButton_${blockId}`} onClick={handleSaveButton} className="songbuttons"  style={{ display: "none"}}>Save</button>
+      <button id={`deleteButton_${blockId}`} onClick={handleDeleteButton} className="songbuttons" style={{ display:"none"}}>Delete</button>
+      <button id={`saveButton_${blockId}`} onClick={handleSaveButton} className="songbuttons"  style={{ display: "none"}}>Save Spell</button>
       {videoId && <YouTube videoId={videoId} opts={opts} style={{ display:"none"}} />}
     </div>
   );

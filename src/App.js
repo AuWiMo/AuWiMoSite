@@ -5,46 +5,46 @@ import colors from './components/colors';
 
 function App() {
   document.title = "Bardic Songbook";
-  const [songBlocks, setSongBlocks] = useState([1]); 
+  const [songBlocks, setSongBlocks] = useState([]);
   const [bard, setBard] = useState('potato');
 
   const addSongBlock = () => {
-    setSongBlocks([...songBlocks, songBlocks.length + 1]);
+    setSongBlocks((prevSongBlocks) => [...prevSongBlocks, prevSongBlocks.length + 1]);
   };
 
-  const getCookie = (name) => {
-    const cookies = document.cookie.split(';');
-    for (const cookie of cookies) {
-      const [cookieName, cookieValue] = cookie.trim().split('=');
-      if (cookieName === name) {
-        return cookieValue;
-      }
-    }
-    return null;
-  };
 
   useEffect(() => {
     // Code to run on page load
-    let bardCookie = getCookie("bard");
-    if (bardCookie) {
-      console.log("Bard encountered:", bardCookie);
-      setBard(bardCookie)
+    let bardStored = localStorage.getItem("bard");
+    if (bardStored) {
+      bardStored = JSON.parse(bardStored)
+      console.log("Bard encountered:", bardStored);
+      setBard(bardStored)
+
+      let numSpells = bardStored.length
+      console.log("Number of spells: ", numSpells)
+
+      let i = 1;
+      while (i <= numSpells) {
+        addSongBlock()
+        i++
+      }
+
+
+
     } else {
       console.log("Let's create a bard!");
-      bardCookie = {
-        spell1: {
-          name: "Spell Name",
-          url: "Song URL"
-        }
-      };
-      console.log("New bard", bardCookie);
-      setBard(bardCookie)
+      addSongBlock()
+
     }
-    setTimeout(() => {
-      console.log("Lets check them out!\n", bard)
-    }, 500)
+    
     
   }, []);
+
+
+    
+    
+  
 
 
 
