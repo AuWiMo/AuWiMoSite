@@ -1,6 +1,10 @@
 import React from 'react';
 
 const Footer = () => {
+  const openDDM = () => {
+    window.open('https://store.steampowered.com/app/2454170/Doodle_Dice_Monsters/', '_blank');
+  };
+
   return (
     <div style={{
       position: 'fixed',
@@ -15,14 +19,13 @@ const Footer = () => {
       justifyContent: 'space-between',
       alignItems: 'center',
     }}>
-      <div style={{ color: 'black', textDecoration: 'none', marginInlineStart: '2vw' }}>
+      <div onClick={openDDM} style={{ color: 'black', textDecoration: 'none', marginInlineStart: '2vw' }}>
         &copy; 2024 Mighty Jungle Games LLC / Austin "AuWiMo" Morris
       </div>
-      <div>
-        <a href="/privacy-policy" style={{ color: 'black', textDecoration: 'none', marginInlineEnd: '2vw' }}>
-          Privacy Policy
-        </a>
-      </div>
+      <a onClick={openDDM} href="/privacy-policy" style={{ color: 'black', textDecoration: 'none', marginInlineEnd: '2vw' }}>
+          {'> > > > >  Check Out Doodle Dice Monsters!  < < < < <'}
+      </a>
+      
     </div>
   );
 };

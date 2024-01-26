@@ -2,6 +2,7 @@ import React, { useState, useEffect  } from 'react';
 import SongBlock from './components/SongBlock'; 
 import Footer from './components/Footer'; 
 import colors from './components/colors';
+import logo from './components/logo.png';
 
 function App() {
   document.title = "Bardic Songbook";
@@ -42,7 +43,15 @@ function App() {
   return (
     
     <div style={{ display:'flex', flexDirection:"column", alignItems: 'center', justifyContent: 'center' }}>
-      <h1 style={{ color: colors.yellow, textShadow: `2px 2px 4px black`, }}>Bardic Songbook</h1>
+      <div style={{ display:'flex', flexDirection:"row", alignItems: 'center', justifyContent: 'center' }}>
+        <img
+          src={logo}
+          alt="Logo"
+          style={{ width: '64px', height: '64px' }}
+        />
+        <h1 style={{ color: colors.yellow, textShadow: `2px 2px 4px black`, marginInlineEnd: "64px" }}>Bardic Songbook</h1>
+
+      </div>
       {songBlocks.map((blockId) => (
         <SongBlock key={blockId} blockId={blockId} />
       ))}
