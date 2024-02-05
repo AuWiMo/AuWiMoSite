@@ -36,9 +36,9 @@ const SongBlock = ({ blockId }) => {
   const [videoId, setVideoId] = useState('');
   const [startTime, setStartTime] = useState(0);  
 
-  useEffect(() => {
-    if (bard[blockId].old) { handleSaveButton() }
-  })
+  // useEffect(() => {
+  //   if (bard[blockId].old) { handleSaveButton() }
+  // })
   
   const handleSpellChange = (e) => {
     setSpellName(e.target.value);
@@ -49,8 +49,10 @@ const SongBlock = ({ blockId }) => {
   };
 
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isEditMode, setEditMode] = useState(true);
 
   const handlePlayButton = () => {
+    console.log("handlePlayButton()")
     const videoIdMatch = /(?:youtube\.com\/(?:[^/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/.exec(songName);
 
     if (videoIdMatch && videoIdMatch[1]) {
@@ -71,6 +73,8 @@ const SongBlock = ({ blockId }) => {
   };
 
   const handleStopButton = () => {
+    console.log("handleStopButton()")
+
     setVideoId('');
     setStartTime(0);
 
@@ -86,11 +90,12 @@ const SongBlock = ({ blockId }) => {
     if (isPlaying) {
       playButton.style.display = 'none';
       stopButton.style.display = 'flex';
-    } else {
+    } else if (!isEditMode) {
+  
       playButton.style.display = 'flex';
       stopButton.style.display = 'none';
     }
-  }, [isPlaying, blockId]);
+  }, [isPlaying]);
 
   const handleEditButton = () => {
     // You can perform actions with the songName here
@@ -100,7 +105,7 @@ const SongBlock = ({ blockId }) => {
     document.getElementById(`saveButton_${blockId}`).style.display = 'block';
     document.getElementById(`playButton_${blockId}`).style.display = 'none';
     document.getElementById(`deleteButton_${blockId}`).style.display = 'block';
-
+    setEditMode(true)
   };
 
   const handleDeleteButton = () => {
@@ -131,7 +136,7 @@ const SongBlock = ({ blockId }) => {
     newBard[blockId] = newSpell
     localStorage.setItem('bard', JSON.stringify(newBard))
     console.log("Saving bard", newBard)
-
+    setEditMode(false)
   };
 
   const opts = {
@@ -154,8 +159,8 @@ const SongBlock = ({ blockId }) => {
         borderRadius: '5px',
         width: 'min-content',
         margin: "5px",
-        background: "#d2ba0c",
-        backgroundImage: "linear-gradient(19deg, #FFE200 0%, #ADAD00 100%)"
+        background: "tan",
+        
       }}>
       <input
         type="text"
@@ -164,7 +169,7 @@ const SongBlock = ({ blockId }) => {
         className="songbuttons"
         placeholder="Spell Name"
         autoComplete="off"
-        onClick={handlePlayButton}
+        // onClick={handlePlayButton}
         value={spellName}
       />
       <input 
@@ -178,7 +183,7 @@ const SongBlock = ({ blockId }) => {
         value={songName}
         
       />
-      <button id={`playButton_${blockId}`} onClick={handlePlayButton} className="songbuttons"  style={{ display:"none"}}>Start Casting</button>
+      <button id={`playButton_${blockId}`} onClick={handlePlayButton} className="songbuttons" style={{ display:"none"}}>Start Casting</button>
 
       <button id={`stopButton_${blockId}`} onClick={handleStopButton} className="songbuttons" style={{ 
         display: "none", 

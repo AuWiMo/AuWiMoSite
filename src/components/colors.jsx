@@ -1,6 +1,6 @@
 // colors.js
 const colors = {
-  yellow: "#f2e70f",
+  yellow: "#824C1C",
   darkYellow: "#a8a00a",
   backgroundColor: "#1849b5",
   lightblueAccent: "#709bb3"
