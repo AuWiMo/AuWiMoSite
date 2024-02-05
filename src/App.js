@@ -2,7 +2,7 @@ import React, { useState, useEffect  } from 'react';
 import SongBlock from './components/SongBlock'; 
 import Footer from './components/Footer'; 
 import colors from './components/colors';
-import logo from './components/logo.png';
+// import logo from './components/logo.png';
 
 function App() {
   document.title = "Bardic Songbook";

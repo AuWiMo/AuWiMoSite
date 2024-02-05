@@ -95,7 +95,7 @@ const SongBlock = ({ blockId }) => {
       playButton.style.display = 'flex';
       stopButton.style.display = 'none';
     }
-  }, [isPlaying]);
+  }, [isPlaying, blockId, isEditMode]);
 
   const handleEditButton = () => {
     // You can perform actions with the songName here
