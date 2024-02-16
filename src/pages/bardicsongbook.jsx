@@ -48,7 +48,7 @@ function BardicSongbook() {
       width: '100vw', 
       height: '100vh', 
       background: 'hsla(26, 19%, 40%, 1)',
-      background: 'linear-gradient(90deg, hsla(26, 19%, 40%, 1) 0%, hsla(30, 16%, 76%, 1) 100%)',
+      background: 'linear-gradient(140deg, hsla(26, 19%, 40%, 1) 0%, hsla(30, 16%, 76%, 1) 100%)',
       zIndex: -1
       }}>
       </div> 

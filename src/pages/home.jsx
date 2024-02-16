@@ -1,9 +1,34 @@
 import React, { useState, useEffect  } from 'react';
 import '../components/home/home.css';
 import Header from '../components/home/Header'; 
-
+import Divider from '../components/home/Divider';
 
 function Home() {
+  const [background, setBackground] = useState('linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(50,205,50,1) 25%, rgba(132,244,112,1) 30%, rgba(50,205,50,1) 35%, rgba(2,0,36,0) 50%, rgba(50,205,50,1) 75%, rgba(132,244,112,1) 85%, rgba(50,205,50,1) 95%)'); // Initial color
+  const [time] = useState(Date.now())
+  
+  useEffect(() => {
+    // Function to generate a random color
+    const pushColor = () => {
+      let time_elapsed =  ((8 *(Date.now() - time)/1000) % 50);
+      let new_gradient = `linear-gradient(90deg, rgba(2,0,36,0) ${-100 + time_elapsed}%, rgba(50,205,50,1) ${-80 + time_elapsed}%, rgba(132,244,112,1) ${-70 + time_elapsed}%, rgba(50,205,50,1) ${-60 + time_elapsed}%, rgba(2,0,36,0) ${-50 + time_elapsed}%, rgba(50,205,50,1) ${-30 + time_elapsed}%, rgba(132,244,112,1) ${-20 + time_elapsed}%, rgba(50,205,50,1) ${-10 + time_elapsed}%, rgba(2,0,36,0) ${0 + time_elapsed}%, rgba(50,205,50,1) ${20 + time_elapsed}%, rgba(132,244,112,1) ${30 + time_elapsed}%, rgba(50,205,50,1) ${40 + time_elapsed}%, rgba(2,0,36,0) ${50 + time_elapsed}%, rgba(2,0,36,0) ${60 + time_elapsed}%, rgba(50,205,50,1) ${70 + time_elapsed}%, rgba(132,244,112,1) ${80 + time_elapsed}%, rgba(50,205,50,1) ${90 + time_elapsed}%, rgba(2,0,36,0) ${100 + time_elapsed}%)`;
+      console.log(time_elapsed)
+      return new_gradient
+    };
+
+    // Interval to update the background color every 0.5 seconds
+    const intervalId = setInterval(() => {
+      const newColor = pushColor();
+      setBackground(newColor);
+    }, 100);
+
+    // Clean-up function to clear the interval when component unmounts
+    return () => clearInterval(intervalId);
+  }, []); // Empty dependency array ensures the effect runs only once on component mount
+
+
+
+
   return (
     <div style={{ display:'flex', flexDirection:"column", alignItems: 'center', justifyContent: 'center', width: '100%'}}>
       <div id='homeBg' style={{ // background
@@ -20,16 +45,17 @@ function Home() {
 
       <Header/>
 
+      <Divider/>
 
       {/* //about me */}
       <div style={{ display:'flex', flexDirection:"column", alignItems: 'center', justifyContent: 'center', width: '100%'}}>
 
         
-        <div style={{ display:'flex', flexDirection:"row", alignItems: 'center', justifyContent: 'center', marginTop: '1vh', marginInline: '2vw', width: 'calc(100% - 4vw)',  gap: '5vw'}}>
+        <div style={{ display:'flex', flexDirection:"row", alignItems: 'center', justifyContent: 'center', marginBlock: '1vh', marginInline: '2vw', width: 'calc(100% - 4vw)',  gap: '5vw'}}>
 
           <div style={{ display:'flex', flexDirection:"column", alignItems: 'center', justifyContent: 'center', border: 'none', }}>
             <div className='matrix_font matrix_reference'>Wake up... The Matrix has you... Follow the White Rabbit down the ho le and you will find...</div>
-            <div id="nameplate" style={{ color: "lime", textShadow: `0px 0px 1px black`, 
+            <div id="nameplate" style={{ color: "lime", textShadow: `0px 0px 1px black`,
             }} className='matrix_font'>AUSTIN MORRIS</div>
             <div style={{ textAlign: 'center'}} className='matrix_font intro_text'>I am a software engineer with experience in game development, cloud systems<br></br>web development, and automation studying at the Georgia Institute of Technology. </div>
             <div style={{ textAlign: 'center'}} className='matrix_font intro_text'>I like to dive into creative indeavors, particularly investigatiing high-tech and cutting<br></br>edge technologies. Why would I wrestle with devices of old when I could <br></br>be creating the toys and tools of tomorrow?</div>
@@ -41,79 +67,15 @@ function Home() {
           </div>
         </div>
 
-        <div className='matrix_font intro_text' style={{display: 'flex', flexDirection: "row", marginTop: '5vh', width: '100%', justifyContent: 'flex-start', overflow: 'hidden'}}>
-          <div id="" style={{position: 'relative', left: '0%', display: 'flex', flexDirection: "row",}}>
-            <div style={{opacity: '10%'}}>01100001</div>
-            <div style={{opacity: '15%'}}>01110101</div>
-            <div style={{opacity: '20%'}}>01110111</div>
-            <div style={{opacity: '25%'}}>01101001</div>
-            <div style={{opacity: '30%'}}>01101101</div>
-            <div style={{opacity: '35%'}}>01101111</div>
-            <div style={{opacity: '40%'}}>01100001</div>
-            <div style={{opacity: '45%'}}>01110101</div>
-            <div style={{opacity: '50%'}}>01110111</div>
-            <div style={{opacity: '55%'}}>01101001</div>
-            <div style={{opacity: '60%'}}>01101101</div>
-            <div style={{opacity: '65%'}}>01101111</div>
-            <div style={{opacity: '70%'}}>01100001</div>
-            <div style={{opacity: '75%'}}>01110101</div>
-            <div style={{opacity: '80%'}}>01110111</div>
-            <div style={{opacity: '85%'}}>01101001</div>
-            <div style={{opacity: '90%'}}>01101101</div>
-            <div style={{opacity: '95%'}}>01101111</div>
-            <div style={{opacity: '90%'}}>0</div>
-            <div style={{opacity: '85%'}}>1</div>
-            <div style={{opacity: '80%'}}>1</div>
-            <div style={{opacity: '75%'}}>0</div>
-            <div style={{opacity: '70%'}}>0</div>
-            <div style={{opacity: '60%'}}>0</div>
-            <div style={{opacity: '40%'}}>0</div>
-            <div style={{opacity: '20%'}}>1</div>
-            <div style={{opacity: '15%'}}>01110101</div>
-            <div style={{opacity: '20%'}}>01110111</div>
-            <div style={{opacity: '25%'}}>01101001</div>
-            <div style={{opacity: '30%'}}>01101101</div>
-            <div style={{opacity: '35%'}}>01101111</div>
-            <div style={{opacity: '40%'}}>01100001</div>
-            <div style={{opacity: '45%'}}>01110101</div>
-            <div style={{opacity: '50%'}}>01110111</div>
-            <div style={{opacity: '55%'}}>01101001</div>
-            <div style={{opacity: '60%'}}>01101101</div>
-            <div style={{opacity: '65%'}}>01101111</div>
-            <div style={{opacity: '70%'}}>01100001</div>
-            <div style={{opacity: '75%'}}>01110101</div>
-            <div style={{opacity: '80%'}}>01110111</div>
-            <div style={{opacity: '85%'}}>01101001</div>
-            <div style={{opacity: '90%'}}>01101101</div>
-            <div style={{opacity: '95%'}}>01101111</div>
-            <div style={{opacity: '90%'}}>0</div>
-            <div style={{opacity: '85%'}}>1</div>
-            <div style={{opacity: '80%'}}>1</div>
-            <div style={{opacity: '75%'}}>0</div>
-            <div style={{opacity: '70%'}}>0</div>
-            <div style={{opacity: '60%'}}>0</div>
-            <div style={{opacity: '40%'}}>0</div>
-            <div style={{opacity: '20%'}}>1</div>
-            <div style={{opacity: '15%'}}>01110101</div>
-            <div style={{opacity: '20%'}}>01110111</div>
-            <div style={{opacity: '25%'}}>01101001</div>
-            <div style={{opacity: '30%'}}>01101101</div>
-            <div style={{opacity: '35%'}}>01101111</div>
-            <div style={{opacity: '40%'}}>01100001</div>
-            <div style={{opacity: '45%'}}>01110101</div>
-            <div style={{opacity: '50%'}}>01110111</div>
-            <div style={{opacity: '55%'}}>01101001</div>
-            <div style={{opacity: '60%'}}>01101101</div>
-            <div style={{opacity: '65%'}}>01101111</div>
-            <div style={{opacity: '70%'}}>01100001</div>
-            <div style={{opacity: '75%'}}>01110101</div>
-            <div style={{opacity: '80%'}}>01110111</div>
-            <div style={{opacity: '85%'}}>01101001</div>
-            <div style={{opacity: '90%'}}>01101101</div>
-            <div style={{opacity: '95%'}}>01101111</div>
-          </div>
-          
-        </div>
+
+
+        <Divider/>
+
+
+        
+
+     
+
       </div>
 
       

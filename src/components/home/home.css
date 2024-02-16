@@ -30,3 +30,11 @@
   line-height: 3;
 
 }
+
+
+.gradient_text {
+  background: linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(50,205,50,1) 25%, rgba(132,244,112,1) 30%, rgba(50,205,50,1) 35%, rgba(2,0,36,0) 50%, rgba(50,205,50,1) 75%, rgba(132,244,112,1) 85%, rgba(50,205,50,1) 95%);
+  background-clip: text !important; /* Clip the gradient to the text */
+  -webkit-background-clip: text; /* Clip the gradient to the text */
+  -webkit-text-fill-color: transparent; /* Hide the text color */
+}
