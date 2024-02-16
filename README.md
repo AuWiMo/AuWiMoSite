@@ -12,5 +12,5 @@ If you are not using an ad blocker, you may experience the audio of ads playing 
 Your data will be saved to your browser local storage so that it persists between sessions. If you need to start over, simply clear the site data.
 If people like this tool I will be adding a way to have multiple different Bards added and deleted so sets of Spells can be managed easier
 
-currently live at: https://gray-ground-0ce53e710.4.azurestaticapps.net/ 
+Currently live at: https://auwimo.com/ 
 

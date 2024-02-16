@@ -1,43 +1,4 @@
 body {
-  /* background-color: #3d6e9a; */
-  background: hsla(26, 19%, 40%, 1);
-  background: linear-gradient(90deg, hsla(26, 19%, 40%, 1) 0%, hsla(30, 16%, 76%, 1) 100%);
-  background: -moz-linear-gradient(90deg, hsla(26, 19%, 40%, 1) 0%, hsla(30, 16%, 76%, 1) 100%);
-  background: -webkit-linear-gradient(90deg, hsla(26, 19%, 40%, 1) 0%, hsla(30, 16%, 76%, 1) 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#7A6453", endColorstr="#CBC1B7", GradientType=1 );
-  background-attachment: fixed; 
-  height: 100vh;
-  margin: 0; 
+  background-color: lightblue;
 }
-
-.songbuttons {
-  color: rgb(231, 205, 175);
-  padding-inline: 10px;
-  margin-inline: 10px;
-  background: rgb(119, 93, 48);
-  outline: none;
-  border: 2px solid #562f18; 
-}
-
-
-.songbuttons::placeholder {
-  color: rgb(231, 205, 175);
-}
-
-.songbuttons:hover {
-  background: rgb(143, 109, 66);
-  outline: none;
-  border: 2px solid #43220f; 
-
-}
-
-.songbuttons:disabled {
-  color: rgb(231, 205, 175);
-  padding-inline: 10px;
-  margin-inline: 10px;
-  background: rgb(119, 93, 48);
-  outline: none;
-  border: 2px solid #562f18; 
-}
-
 

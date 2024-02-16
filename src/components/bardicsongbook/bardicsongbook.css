@@ -1,0 +1,32 @@
+
+.songbuttons {
+  color: rgb(231, 205, 175);
+  padding-inline: 10px;
+  margin-inline: 10px;
+  background: rgb(119, 93, 48);
+  outline: none;
+  border: 2px solid #562f18; 
+}
+
+
+.songbuttons::placeholder {
+  color: rgb(231, 205, 175);
+}
+
+.songbuttons:hover {
+  background: rgb(143, 109, 66);
+  outline: none;
+  border: 2px solid #43220f; 
+
+}
+
+.songbuttons:disabled {
+  color: rgb(231, 205, 175);
+  padding-inline: 10px;
+  margin-inline: 10px;
+  background: rgb(119, 93, 48);
+  outline: none;
+  border: 2px solid #562f18; 
+}
+
+
