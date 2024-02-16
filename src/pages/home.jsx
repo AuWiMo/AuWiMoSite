@@ -20,7 +20,7 @@ function Home() {
 
       <Header/>
 
-      <Divider/>
+      <Divider randomFactor={0}/>
 
       {/* //about me */}
       <div style={{ display:'flex', flexDirection:"column", alignItems: 'center', justifyContent: 'center', width: '100%'}}>
@@ -44,7 +44,7 @@ function Home() {
 
 
 
-        <Divider/>
+        <Divider randomFactor={15}/>
 
 
         
