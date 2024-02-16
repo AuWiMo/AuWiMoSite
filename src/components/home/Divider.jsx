@@ -8,7 +8,7 @@ const Divider = () => {
   useEffect(() => {
     // Function to generate a random color
     const pushColor = () => {
-      let time_elapsed =  ((8 *(Date.now() - time)/1000) % 50);
+      let time_elapsed =  ((5 *(Date.now() - time)/1000) % 100);
       let new_gradient = `linear-gradient(90deg, rgba(2,0,36,0) ${-100 + time_elapsed}%, rgba(50,205,50,1) ${-80 + time_elapsed}%, rgba(132,244,112,1) ${-70 + time_elapsed}%, rgba(50,205,50,1) ${-60 + time_elapsed}%, rgba(2,0,36,0) ${-50 + time_elapsed}%, rgba(50,205,50,1) ${-30 + time_elapsed}%, rgba(132,244,112,1) ${-20 + time_elapsed}%, rgba(50,205,50,1) ${-10 + time_elapsed}%, rgba(2,0,36,0) ${0 + time_elapsed}%, rgba(50,205,50,1) ${20 + time_elapsed}%, rgba(132,244,112,1) ${30 + time_elapsed}%, rgba(50,205,50,1) ${40 + time_elapsed}%, rgba(2,0,36,0) ${50 + time_elapsed}%, rgba(2,0,36,0) ${60 + time_elapsed}%, rgba(50,205,50,1) ${70 + time_elapsed}%, rgba(132,244,112,1) ${80 + time_elapsed}%, rgba(50,205,50,1) ${90 + time_elapsed}%, rgba(2,0,36,0) ${100 + time_elapsed}%)`;
       console.log(time_elapsed)
       return new_gradient
