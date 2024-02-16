@@ -22,7 +22,7 @@ const Divider = () => {
 
     // Clean-up function to clear the interval when component unmounts
     return () => clearInterval(intervalId);
-  }, []); // Empty dependency array ensures the effect runs only once on component mount
+  }); // Empty dependency array ensures the effect runs only once on component mount
 
   return (
     <div className='matrix_font intro_text' style={{display: 'flex', flexDirection: "row", margin: '3vh', width: '100%', justifyContent: 'flex-start', overflow: 'hidden', position: 'relative'}}> 
