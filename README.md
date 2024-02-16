@@ -1,6 +1,5 @@
 AuWiMoSite
-
-Currently live at: https://auwimo.com/ 
+https://auwimo.com/ 
 
 My portfolio!
 Nothing to explain here, it explains me.
