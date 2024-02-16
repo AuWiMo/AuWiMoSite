@@ -1,6 +1,4 @@
-AuWiMoSite
-
-https://auwimo.com/ 
+AuWiMoSite - https://auwimo.com/ 
 
 My portfolio!
 Nothing to explain here, it explains me.
@@ -8,9 +6,7 @@ Matrix themed because the matrix is cool!
 
 ------------------------------------------
 
-Bardic Songbook
-
-https://auwimo.com/bardicsongbook
+Bardic Songbook - https://auwimo.com/bardicsongbook
 
 Link Spell Names to Songs!
 
