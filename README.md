@@ -3,7 +3,7 @@ Currently live at: https://auwimo.com/
 
 My portfolio!
 Nothing to explain here, it explains me.
-Matrix themed because the matrix is cool. 
+Matrix themed because the matrix is cool! 
 
 ------------------------------------------
 
