@@ -27,15 +27,15 @@ const Header = () => {
 
         color: 'lime'
       }} className='matrix_font'>  
-        <div>About Me</div>
+        <a href="#aboutMe" className='matrix_font'>About Me</a>
         <div>|</div>
-        <div>Experience</div>
+        <a href="#experience" className='matrix_font'>Experience</a>
         <div>|</div>
-        <div>Skills</div>
+        <a href="#skills" className='matrix_font'>Skills</a>
         <div>|</div>
-        <div>Resume</div>
+        <a href="#resume" className='matrix_font'>Resume</a>
         <div>|</div>
-        <div>Contact</div>
+        <a href="#contact" className='matrix_font'>Contact</a>
       </div>
     </div>
     

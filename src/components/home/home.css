@@ -8,10 +8,12 @@
   font-weight: 400;
   font-style: normal;
   color: lime;
+  text-decoration: none;
+  line-height: 1.4;
+  
 }
 
 #nameplate {
-  font-size: 30px;
   font-size: 4vw;
   line-height: 1;
 }
@@ -20,7 +22,6 @@
   font-size: 0.8vw;
   padding: 0.10vw;
   text-align: center;
-  line-height: 1.4;
 
 }
 
@@ -37,4 +38,72 @@
   background-clip: text !important; /* Clip the gradient to the text */
   -webkit-background-clip: text; /* Clip the gradient to the text */
   -webkit-text-fill-color: transparent; /* Hide the text color */
+}
+
+.a {
+  cursor: pointer;
+}
+
+.section_header{
+  font-size: 2vw;
+  margin: 10px;
+}
+
+#educationBox {
+  margin: 20px;
+  width: 40%;
+  border: 2px solid lime;
+  background: #012910;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+#gt_logo {
+  height: 12vh;
+  background-color: white;
+  border-radius: 20px;
+  margin-right: 30px;
+  border: 2px solid green;
+}
+
+.category_header{
+  font-size: 1.5vw;
+}
+
+.experience_row_labeled{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.experience_row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  padding-right: 10vw;
+}
+
+.sideways_wrapper {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 1.8vw;
+}
+
+.sideways_text {
+  transform: rotate(-90deg);
+  transform-origin: center; /* Adjust the transform origin as needed */
+  white-space: nowrap; /* Prevent text wrapping */
+  text-align: center;
+  align-self: center;
+  height: 0px;
 }
