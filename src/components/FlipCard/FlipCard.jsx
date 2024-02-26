@@ -10,7 +10,7 @@ const FlipCard = ({ name, role, description, image }) => {
       <div className="flipper">
         <div className="front matrix_font">
           <div className="project_name">{name}</div>
-          <img src={image} className='project_image'/>
+          <img src={image} alt='logo for this business' className='project_image'/>
           <div>{role}</div>
 
           
