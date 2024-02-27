@@ -108,7 +108,7 @@ function Home() {
                     <div className='bullet'>- Set up CI/CD Workflow with Git Actions</div>
                     <div className='bullet'>- Secured confidential user data with Azure Keyvault</div>
                   </div>
-                 <a rel="noreferrer" href="solvapp.net"  target="_blank" className='matrix_font' style={{textDecoration: 'underline', marginBlock: '20px'}}>Website: https://solvapp.net</a>
+                 <a href="https://solvapp.net" rel="noreferrer"  target="_blank" className='matrix_font' style={{textDecoration: 'underline', marginBlock: '20px'}}>Website: https://solvapp.net</a>
                 
                 </div>
                 
@@ -309,7 +309,7 @@ function Home() {
              <a rel="noreferrer" href="mailto:auwimo@gmail.com" target="_blank"  className='matrix_font'>auwimo@gmail.com</a>
             </div>
           </div>
-           <a rel="noreferrer" href="https://www.linkedin.com/in/auwimo/"  target="_blank" className="contactBox">
+           <a rel="noreferrer" href="https://github.com/AuWiMo/"  target="_blank" className="contactBox">
             <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '20px', alignItems: 'center', width: '300px'}}>
               <div className='category_header matrix_font' style={{margin: '0px'}}>GitHub</div>
               <div className='matrix_font intro_text'>Mostly private for commercial reasons, but you can still look at my commit widget and a few small projects, mostly made when I was learning to code.</div>
