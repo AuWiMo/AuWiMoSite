@@ -30,6 +30,7 @@ import UnityImage from '../components/home/skills_images/unity.png';
 import DockerImage from '../components/home/skills_images/docker.png';
 import JiraImage from '../components/home/skills_images/jira.png';
 import OfficeImage from '../components/home/skills_images/office.png';
+import BlenderImage from '../components/home/skills_images/blender.svg';
 
 import Resume from '../components/home/myresume.pdf';
 //import FileImage from '../components/home/skills_images/file.svg';
@@ -272,6 +273,10 @@ function Home() {
               <Skill
                 name="MS Office"
                 image={OfficeImage}
+              />
+              <Skill
+                name="Blender"
+                image={BlenderImage}
               />
               <div className='matrix_font' style={{ paddingLeft: '40px' }}>
                 
