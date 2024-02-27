@@ -24,8 +24,8 @@ const Divider = ({ randomFactor, id }) => {
   }); // Empty dependency array ensures the effect runs only once on component mount
 
   return (
-    <div id={id} className='matrix_font intro_text' style={{display: 'flex', flexDirection: "row", margin: '3vh', width: '100%', justifyContent: 'flex-start', overflow: 'hidden', position: 'relative'}}> 
-      <div style={{whiteSpace: 'nowrap', userSelect: 'none', background}} className='gradient_text' >
+    <div id={id} className='matrix_font intro_text' style={{display: 'flex', flexDirection: "row", margin: '3vh', width: '100%', justifyContent: 'flex-start', overflow: 'hidden', position: 'relative', textAlign: 'center'}}> 
+      <div style={{whiteSpace: 'nowrap', userSelect: 'none', textAlign: 'center', width: '100%', opacity: '50%', fontSize: '0.8vw', letterSpacing: '0.1em', background}} className='gradient_text' >
         011000010111010101110111011010010110110101101111011000010111010101110111011010010110110101101111011000010111010101110111011010010110110101101111011000010111010101110111011010010110110101101111011000010111010101110111011010010110110101101111
       </div>
     </div>

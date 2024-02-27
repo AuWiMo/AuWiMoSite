@@ -2,7 +2,7 @@ import React from 'react';
 import './FlipCard.css';
 
 
-const FlipCard = ({ name, role, description, image }) => {
+const FlipCard = ({ name, role, dates, description, short_desc, image }) => {
   
   return (
     <div className='card_margins'>
@@ -10,8 +10,9 @@ const FlipCard = ({ name, role, description, image }) => {
       <div className="flipper">
         <div className="front matrix_font">
           <div className="project_name">{name}</div>
+          <div>{short_desc}</div>
           <img src={image} alt='logo for this business' className='project_image'/>
-          <div>{role}</div>
+          <div >{role}</div>
 
           
         </div>
@@ -19,6 +20,7 @@ const FlipCard = ({ name, role, description, image }) => {
           <div>
             <div className="project_name">{name}</div>
             <div>{role}</div>
+            <div className="project_dates">{dates}</div>
           </div>
           <div className='project_description'>{description}</div>
         </div>

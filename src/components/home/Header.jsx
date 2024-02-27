@@ -35,7 +35,7 @@ const Header = () => {
         <div>|</div>
         <a href="#resume" className='matrix_font'>Resume</a>
         <div>|</div>
-        <a href="#contact" className='matrix_font'>Contact</a>
+        <a href="#contact" className='matrix_font'>Contact+</a>
       </div>
     </div>
     

@@ -19,21 +19,20 @@
   align-items: center;
   border-radius: 10px;
 
-
 }
 
 /* flip speed goes here */
 .flipper {
 	transition: 1.0s;
 	transform-style: preserve-3d;
-
+  
 	position: relative;
 }
 
 /* hide back of pane during swap */
 .front, .back {
 	backface-visibility: hidden;
-
+  
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -71,6 +70,10 @@
 
 .project_name {
   font-size: 20px;
+}
+
+.project_dates {
+  font-size: 12px;
 }
 
 .project_image {
