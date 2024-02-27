@@ -5,6 +5,8 @@ import Divider from '../components/home/MatrixDivider';
 import FlipCard from '../components/FlipCard/FlipCard';
 import Skill from '../components/home/Skill';
 
+
+
 import GTLogo from '../components/home/GTVertical.png';
 import SolvImage from '../components/home/project_images/solv_circle_transparent.png';
 import FASImage from '../components/home/project_images/FAS.png';
@@ -71,7 +73,7 @@ function Home() {
           </div>
 
           <div style={{ display:'flex', justifyContent: 'inlineStart', border: 'none', userSelect: 'none', draggable: "false" }}>
-            <img style={{border: '2px solid green',  borderRadius: '10px', userSelect: 'none'}} draggable={false} alt="Me looking Matrix-y" src="https://media.discordapp.net/attachments/603756071139540992/1207908992966197268/IMG_0709.jpg?ex=65e15be9&is=65cee6e9&hm=c9c9bce2db17e1f141c0a04de56c3f76a536ef88e89f0affbeeadb3726c565a5&=&format=webp"/>
+            <div id="matrix_headshot_img"></div>
           </div>
         </div>
 

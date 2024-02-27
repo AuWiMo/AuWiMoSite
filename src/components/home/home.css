@@ -18,6 +18,25 @@
   line-height: 1;
 }
 
+#matrix_headshot_img {
+  border: 2px solid green;  
+  border-radius: 10px; 
+  user-select: none;
+  height: 250px;
+  width: 250px;
+  background: url("./matrix_headshot.png");
+  background-size: contain;
+  transition: border-radius 0.5s, background-image 0.5s; 
+
+}
+#matrix_headshot_img:hover {
+
+  background: url("./matrix_headshot_clear.png");
+  background-size: contain;
+  transition: border-radius 0.5s, background-image 0.5s; 
+  
+}
+
 .intro_text {
   font-size: 12.288px;
   padding: 1.536;
