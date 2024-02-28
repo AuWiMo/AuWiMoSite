@@ -73,11 +73,9 @@ function Home() {
 
           </div>
 
-          <div style={{ display:'flex', justifyContent: 'inlineStart', border: 'none', userSelect: 'none', draggable: "false" }}>
+          <div style={{ display:'flex', flexDirection: 'column', justifyContent: 'inlineStart', border: 'none', userSelect: 'none', draggable: "false" }}>
             <div id="matrix_headshot_img"></div>
-            <div style={{display: 'flex', justifyContent: "flex-start", alignItems: 'center', width: '1px'}}>
-              <div className='matrix_font intro_text sideways_text_CW'>Hover over me!</div>
-            </div>
+            <div className='matrix_font intro_text'>Hover over me!</div>
 
           </div>
         </div>
@@ -171,7 +169,7 @@ function Home() {
               description={
                 <div className='project_description'>
                   <div>
-                    <div className='bullet'>- Developed an game with pure JS (Node.JS), HTML, and CSS</div>
+                    <div className='bullet'>- Developed a game with pure JS (Node.JS), HTML, and CSS</div>
                     <div className='bullet'>- Designed systems for multiplayer gameplay and user creation of game images</div>
                     <div className='bullet'>- Integrated Azure CosmosDB with NoSQL API and Blob Storage to store user data</div>
                   </div>
