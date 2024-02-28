@@ -74,6 +74,7 @@ function Home() {
           </div>
 
           <div style={{ display:'flex', flexDirection: 'column', justifyContent: 'inlineStart', border: 'none', userSelect: 'none', draggable: "false" }}>
+            <link rel="prefetch" href={"../components/home/matrix_headshot_clear.png"}></link>
             <div id="matrix_headshot_img"></div>
             <div className='matrix_font intro_text'>Hover over me!</div>
 
