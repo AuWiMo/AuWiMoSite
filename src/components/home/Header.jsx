@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from './logo_nobg.png'
 
 
 const Header = () => {
@@ -10,8 +11,9 @@ const Header = () => {
       justifyContent: 'center',
       alignContent: 'center'
     }}>
+      <img src={logo} draggable='false' alt="My Logo" style={{height: '40px', marginBlock: 'auto', marginInline: '20px'}}/>
       <div style={{
-        marginBlock: '3vh',
+        marginBlock: '21px',
         left: '50%',
         width: '50%',
         background: '#012910',

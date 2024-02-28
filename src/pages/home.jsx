@@ -75,6 +75,10 @@ function Home() {
 
           <div style={{ display:'flex', justifyContent: 'inlineStart', border: 'none', userSelect: 'none', draggable: "false" }}>
             <div id="matrix_headshot_img"></div>
+            <div style={{display: 'flex', justifyContent: "flex-start", alignItems: 'center', width: '1px'}}>
+              <div className='matrix_font intro_text sideways_text_CW'>Hover over me!</div>
+            </div>
+
           </div>
         </div>
 
@@ -86,7 +90,7 @@ function Home() {
             <div className='matrix_font'>Anticipated Graduation: December 2024</div>
           </div>
          <a rel="noreferrer"href="https://www.cc.gatech.edu/facts-and-rankings" target="_blank">
-            <img id="gt_logo" src={GTLogo} alt='Georgia Institute of Technology Logo' />
+            <img draggable='false' id="gt_logo" src={GTLogo} alt='Georgia Institute of Technology Logo' />
           </a>
         </div>
 
@@ -297,7 +301,7 @@ function Home() {
             <div className='matrix_font filename'>Resume 08-03-2023.pdf</div>
 
           </div>
-          <img className="download_logo" src={DownloadImage} alt='Download Icon' style={{fill: 'white'}}/>
+          <img draggable='false' className="download_logo" src={DownloadImage} alt='Download Icon' style={{fill: 'white'}}/>
         </a>
 
         <Divider randomFactor={0} id="contact"/>
@@ -314,14 +318,14 @@ function Home() {
               <div className='category_header matrix_font' style={{margin: '0px'}}>GitHub</div>
               <div className='matrix_font intro_text'>Mostly private for commercial reasons, but you can still look at my commit widget and a few small projects, mostly made when I was learning to code.</div>
             </div>
-            <img className="contact_logo" src={GithubImage} alt='GitHub Logo' />
+            <img draggable='false' className="contact_logo" src={GithubImage} alt='GitHub Logo' />
           </a>
            <a rel="noreferrer" href="https://www.linkedin.com/in/auwimo/"  target="_blank" className="contactBox">
             <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '20px', alignItems: 'center', width: '300px'}}>
               <div className='category_header matrix_font' style={{margin: '0px'}}>LinkedIn</div>
               <div className='matrix_font intro_text'>My site is much cooler and more useful, but here: </div>
             </div>
-            <img className="contact_logo" src={LinkedinImage} alt='LinkedIn Logo' />
+            <img draggable='false' className="contact_logo" src={LinkedinImage} alt='LinkedIn Logo' />
           </a>
         </div>
         

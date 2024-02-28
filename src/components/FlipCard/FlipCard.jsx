@@ -11,7 +11,7 @@ const FlipCard = ({ name, role, dates, description, short_desc, image }) => {
         <div className="front matrix_font">
           <div className="project_name">{name}</div>
           <div>{short_desc}</div>
-          <img src={image} alt='logo for this business' className='project_image'/>
+          <img src={image} alt='logo for this business' className='project_image' draggable='false'/>
           <div >{role}</div>
 
           
