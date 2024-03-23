@@ -1,16 +1,20 @@
 .card_margins {
   margin: 15px;
+  
+
 }
 
 /* entire container, keeps perspective */
 .flip-container {
 	perspective: 1000px;
+
+
 }
 
-	/* flip the pane when hovered */
-	.flip-container:hover .flipper, .flip-container.hover .flipper {
-		transform: rotateY(180deg);
-	}
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+  transform: rotateY(180deg);
+}
 
 .flip-container, .front, .back {
 	width: 300px;
@@ -18,7 +22,7 @@
   justify-content: space-evenly;
   align-items: center;
   border-radius: 10px;
-
+  
 }
 
 /* flip speed goes here */
@@ -51,6 +55,8 @@
   justify-content: center;
   align-items: center;
 
+
+
 }
 
 /* back, initially hidden pane */
@@ -63,6 +69,8 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+
+
 
 
 
@@ -92,4 +100,12 @@
 
 .bullet {
   padding-block: 5px;
+}
+
+.info_icon {
+  position: absolute;
+  font-size: 25px;
+  line-height: 30px;
+  bottom: 5px;
+  right: 10px;
 }

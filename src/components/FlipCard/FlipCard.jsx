@@ -13,6 +13,7 @@ const FlipCard = ({ name, role, dates, description, short_desc, image }) => {
           <div>{short_desc}</div>
           <img src={image} alt='logo for this business' className='project_image' draggable='false'/>
           <div >{role}</div>
+          <div className='info_icon matrix_font'>ⓘ</div>
 
           
         </div>
@@ -25,7 +26,9 @@ const FlipCard = ({ name, role, dates, description, short_desc, image }) => {
           <div className='project_description'>{description}</div>
         </div>
       </div>
+      
     </div>
+    
   </div>
     
   );
