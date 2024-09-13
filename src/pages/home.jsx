@@ -309,7 +309,7 @@ function Home() {
        <a rel="noreferrer" href={Resume} download="AustinMorrisResume.pdf" className="contactBox" style={{ height: '50px', width: '300px' }}>
           <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '20px', alignItems: 'center', width: '250px'}}>
             <div className='category_header matrix_font' style={{margin: '0px'}}>DOWNLOAD</div>
-            <div className='matrix_font filename'>Resume 2024-05-03.pdf</div>
+            <div className='matrix_font filename'>Resume 2024-09-13.pdf</div>
 
           </div>
           <img draggable='false' className="download_logo" src={DownloadImage} alt='Download Icon' style={{fill: 'white'}}/>
