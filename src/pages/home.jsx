@@ -9,8 +9,9 @@ import Skill from '../components/home/Skill';
 
 import GTLogo from '../components/home/GTVertical.png';
 import SolvImage from '../components/home/project_images/solv_circle_transparent.png';
+import SendSafelyImage from '../components/home/project_images/sendsafely.png';
 import FASImage from '../components/home/project_images/FAS.png';
-import HelloFreshImage from '../components/home/project_images/hellofresh.png';
+import HelloFreshImage from '../components/home/project_images/ProLogistix.webp';
 import DDMImage from '../components/home/project_images/ddm.png';
 import BardicImage from '../components/bardicsongbook/logo.png';
 
@@ -69,9 +70,9 @@ function Home() {
             <div className='matrix_font matrix_reference'>Wake up... The Matrix has you... Follow the White Rabbit down the hole and you will find...</div>
             <div id="nameplate" style={{ color: "lime", textShadow: `0px 0px 1px black`,
             }} className='matrix_font'>AUSTIN MORRIS</div>
-            <div style={{ textAlign: 'center'}} className='matrix_font intro_text'>I am a software engineer with experience in game development, cloud systems<br></br>web development, and automation studying at the Georgia Institute of Technology. </div>
-            <div style={{ textAlign: 'center'}} className='matrix_font intro_text'>I like to dive into creative indeavors, particularly investigatiing high-tech and cutting<br></br>edge technologies. Why would I wrestle with devices of old when I could <br></br>be creating the toys and tools of tomorrow?</div>
-
+            <div style={{ maxWidth: '466px'}} >
+              <div style={{ textAlign: 'center'}} className='matrix_font intro_text'>I am a software engineer with experience in game development, cloud systems web development, and automation studying at the Georgia Institute of Technology. I like to dive into creative indeavors, particularly investigatiing high-tech and cutting edge technologies. Why would I hold onto devices of old when I could be creating the toys and tools of tomorrow?</div>
+            </div>
           </div>
 
           <div style={{ display:'flex', flexDirection: 'column', justifyContent: 'inlineStart', border: 'none', userSelect: 'none', draggable: "false" }}>
@@ -85,9 +86,9 @@ function Home() {
         <div id="educationBox">
           <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '20px', marginInline: '40px', alignItems: 'center'}}>
             <div className='category_header matrix_font' style={{margin: '0px'}}>Education</div>
-            <div className='matrix_font'>Bachelor of Science - Computer Science</div>
-            <div className='matrix_font'>Thread specializations in A.I. and Computational Media</div>
-            <div className='matrix_font'>Anticipated Graduation: December 2024</div>
+            <div style={{ textAlign: 'center'}} className='matrix_font'>Bachelor of Science - Computer&nbsp;Science</div>
+            <div style={{ textAlign: 'center'}} className='matrix_font'>Thread specializations in A.I. and Computational&nbsp;Media</div>
+            <div style={{ textAlign: 'center'}} className='matrix_font'>Anticipated Graduation: December&nbsp;2024</div>
           </div>
          <a rel="noreferrer"href="https://www.cc.gatech.edu/facts-and-rankings" target="_blank">
             <img draggable='false' id="gt_logo" src={GTLogo} alt='Georgia Institute of Technology Logo' />
@@ -98,32 +99,31 @@ function Home() {
 
         <Divider randomFactor={15} id="experience" />
         <div className='matrix_font section_header'>EXPERIENCE</div>
+
         <div className='experience_row_labeled'>
-          <div className='matrix_font category_header sideways_text'>PROESSIONAL</div>
+          <div className='matrix_font category_header sideways_text'>PROFESSIONAL</div>
           <div className='experience_row'>
             <FlipCard
-              name='SolvAI Technologies LLC'
-              role='Backend and Cloud Developer'
-              dates='(Jan. 2024 - Present)'
+              name='SendSafely'
+              role={<div>Software Developer</div>}
+              dates='(May 2024 - Present)'
               description={
                 <div className='project_description'>
                   <div>
-                    <div className='bullet'>- Set Up, Integrated, and Managed Azure Cosmos Database</div>
-                    <div className='bullet'>- Set up CI/CD Workflow with Git Actions</div>
-                    <div className='bullet'>- Secured confidential user data with Azure Keyvault</div>
+                    <div className='bullet'>- Extended logging capability by developing Log4j plugins</div>
+                    <div className='bullet'>- Restructured and extended Github Actions, greatly reducing repeated code and automating repetitive tasks</div>
+                    <div className='bullet'>- Led investigation into and successfully repaired multiple bugs actively impacting key users</div>
                   </div>
-                 <a href="https://solvapp.net" rel="noreferrer"  target="_blank" className='matrix_font' style={{textDecoration: 'underline', marginBlock: '20px'}}>Website: https://solvapp.net</a>
                 
                 </div>
                 
               }
-              image={SolvImage}
-
-
+              image={SendSafelyImage}
             />
+
             <FlipCard
               name='Factory Automation Systems'
-              role={<div>Software Engineering and <br />Manufacturing Automation Co-Op</div>}
+              role={<div>Software Engineering and <br />Manufacturing Automation Intern</div>}
               dates='(Aug. 2022 - Dec. 2022)'
               description={
                 <div className='project_description'>
@@ -137,11 +137,11 @@ function Home() {
                 
               }
               image={FASImage}
-
             />
+
             <FlipCard
-              name='Hello Fresh'
-              role='Production Associate'
+              name='ProLogistix'
+              role='Hello Fresh Production Associate'
               dates='(Jun. 2021 - Aug. 2021)'
               description={
                 <div className='project_description'>
@@ -150,22 +150,19 @@ function Home() {
                     <div className='bullet'>- Worked with a team to consistently meet production quotas</div>
                     <div className='bullet'>- Adapted to quickly transferring to new roles</div>
                   </div>
-                
                 </div>
-                
               }
               image={HelloFreshImage}
             />
           </div>
-          
-
         </div>
+
         <div className='experience_row_labeled'>
-          <div className='matrix_font category_header sideways_text'>PERSONAL</div>
+          <div className='matrix_font category_header sideways_text'>PROJECTS</div>
           <div className='experience_row'>
             <FlipCard
               name='Doodle Dice Monsters'
-              short_desc='Online Multiplayer Game'
+              short_desc='Synchronous Multiplayer Game'
               role='Full Stack Game Developer'
               dates="(Complicated - Present)"
               description={
@@ -182,6 +179,24 @@ function Home() {
               }
               image={DDMImage}
             />
+
+            <FlipCard
+              name='SolvApp'
+              short_desc='LMS Integrated RAG Chatbot'
+              role='Backend and Cloud Developer'
+              dates='(Jan. 2024 - May 2024)'
+              description={
+                <div className='project_description'>
+                  <div>
+                    <div className='bullet'>- Set Up, Integrated, and Managed Azure Cosmos Database</div>
+                    <div className='bullet'>- Set up CI/CD Workflow with Git Actions</div>
+                    <div className='bullet'>- Secured confidential user data with Azure Keyvault</div>
+                  </div>
+                </div>
+              }
+              image={SolvImage}
+            />
+
              <FlipCard
               name='Bardic Songbook'
               role='Web Developer'
@@ -197,10 +212,8 @@ function Home() {
                  <a rel="noreferrer" href="https://auwimo.com/bardicsongbook"  target="_blank" className='matrix_font' style={{textDecoration: 'underline', marginBlock: '20px'}}>Website: LINK</a>
                 
                 </div>
-                
               }
               image={BardicImage}
-
             />
           </div>
 
@@ -264,9 +277,6 @@ function Home() {
                 name="Jira"
                 image={JiraImage}
               />
-
-              
-              
         </div>
         <div className='skills_row'>
               <div style={{ paddingLeft: '80px' }}></div>
@@ -290,9 +300,6 @@ function Home() {
                 
                 <div>And More!</div>
               </div>
-             
-              
-              
         </div>
       
 
@@ -311,12 +318,12 @@ function Home() {
         <Divider randomFactor={0} id="contact"/>
         <div className='matrix_font section_header'>CONTACT+</div>
         <div className='skills_row'>
-          <div className="contactBox">
+          <a rel="noreferrer" href="mailto:auwimo@gmail.com" target="_blank"   className="contactBox">
             <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '20px', alignItems: 'center', width: '150px'}}>
               <div className='category_header matrix_font' style={{margin: '0px'}}>Email</div>
-             <a rel="noreferrer" href="mailto:auwimo@gmail.com" target="_blank"  className='matrix_font'>auwimo@gmail.com</a>
+             <div className='matrix_font'>auwimo@gmail.com</div>
             </div>
-          </div>
+          </a>
            <a rel="noreferrer" href="https://github.com/AuWiMo/"  target="_blank" className="contactBox">
             <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '20px', alignItems: 'center', width: '300px'}}>
               <div className='category_header matrix_font' style={{margin: '0px'}}>GitHub</div>
@@ -325,9 +332,9 @@ function Home() {
             <img draggable='false' className="contact_logo" src={GithubImage} alt='GitHub Logo' />
           </a>
            <a rel="noreferrer" href="https://www.linkedin.com/in/auwimo/"  target="_blank" className="contactBox">
-            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '20px', alignItems: 'center', width: '300px'}}>
+            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '20px', alignItems: 'center', width: '200px'}}>
               <div className='category_header matrix_font' style={{margin: '0px'}}>LinkedIn</div>
-              <div className='matrix_font intro_text'>My site is much cooler and more useful, but here: </div>
+              <div className='matrix_font intro_text'>My site is much cooler, but here: </div>
             </div>
             <img draggable='false' className="contact_logo" src={LinkedinImage} alt='LinkedIn Logo' />
           </a>
@@ -335,8 +342,8 @@ function Home() {
         
       </div>
 
-        <Divider randomFactor={15} id="contact"/>
-        <div className='matrix_font matrix_reference'>Flynn: That's AuWiMo. He fights for the Users!</div>
+      <Divider randomFactor={15} id="contact"/>
+      <div className='matrix_font matrix_reference'>Flynn: That's AuWiMo. He fights for the Users!</div>
         
 
       

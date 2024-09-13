@@ -19,10 +19,11 @@ const Footer = () => {
       justifyContent: 'space-between',
       alignItems: 'center',
     }}>
+
       <div onClick={openDDM} style={{ color: 'tan', textDecoration: 'none', marginInlineStart: '2vw' }}>
         &copy; 2024 Mighty Jungle Games LLC / Austin "AuWiMo" Morris
       </div>
-      <a onClick={openDDM} href="/privacy-policy" style={{ color: 'tan', textDecoration: 'none', marginInlineEnd: '2vw' }}>
+      <a onClick={openDDM} style={{ color: 'tan', textDecoration: 'none', marginInlineEnd: '2vw', cursor: 'pointer' }}>
           {'> > > > >  Check Out Doodle Dice Monsters!  < < < < <'}
       </a>
       
