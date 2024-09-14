@@ -71,7 +71,9 @@ function Home() {
             <div id="nameplate" style={{ color: "lime", textShadow: `0px 0px 1px black`,
             }} className='matrix_font'>AUSTIN MORRIS</div>
             <div style={{ maxWidth: '466px'}} >
-              <div style={{ textAlign: 'center'}} className='matrix_font intro_text'>I am a software engineer with experience in game development, cloud systems, web development, and automation studying at the Georgia Institute of Technology. I like to dive into creative endeavors, particularly investigating high-tech and cutting edge technologies. Why should I cling desperately to the antiquities of yesterday when I could be creating the tools of tomorrow?</div>
+              <div style={{ textAlign: 'center'}} className='matrix_font intro_text'>I am a software engineer with experience in game development, cloud systems, web development, and automation finishing the final semester of my bachelors  in computer science at the Georgia Institute of Technology. I interned this summer at SendSafely, where I found a place to learn and grow while contributing greatly to the team; I will be returning there full time in January 2025.  I like to dive into creative endeavors, particularly investigating high-tech and cutting edge technologies such as new techniques for artificial intelligence and procedural/adaptive content generation. Why should I cling desperately to the antiquities of yesterday when I could be creating the tools of tomorrow?
+
+</div>
             </div>
           </div>
 
@@ -168,9 +170,12 @@ function Home() {
               description={
                 <div className='project_description'>
                   <div>
-                    <div className='bullet'>- Developed a game with pure JS (Node.JS), HTML, and CSS</div>
-                    <div className='bullet'>- Designed systems for multiplayer gameplay and user creation of game images</div>
-                    <div className='bullet'>- Integrated Azure CosmosDB with NoSQL API and Blob Storage to store user data</div>
+                    <div className='bullet smallerText'>- Developed a game with pure JS (Node.JS), HTML, and CSS</div>
+                    <div className='bullet smallerText'>- Designed systems for multiplayer gameplay and user creation of game images</div>
+                    <div className='bullet smallerText'>- Integrated Azure CosmosDB with NoSQL API and Blob Storage to store user data</div>
+                    <div className='bullet smallerText'>- Major focus put on user experience and interactive design</div>
+                    <div className='bullet smallerText'>- Currently ongoing, demo is released on Steam</div>
+
                   </div>
                  <a rel="noreferrer" href="https://store.steampowered.com/app/2454170/Doodle_Dice_Monsters/"  target="_blank" className='matrix_font' style={{textDecoration: 'underline', marginBlock: '20px'}}>Website: LINK</a>
                 
@@ -188,9 +193,11 @@ function Home() {
               description={
                 <div className='project_description'>
                   <div>
-                    <div className='bullet'>- Set Up, Integrated, and Managed Azure Cosmos Database</div>
-                    <div className='bullet'>- Set up CI/CD Workflow with Git Actions</div>
-                    <div className='bullet'>- Secured confidential user data with Azure Keyvault</div>
+                    <div className='bullet smallerText'>- Set Up, Integrated, and Managed Azure Cosmos Database</div>
+                    <div className='bullet smallerText'>- Set up CI/CD Workflow with Git Actions</div>
+                    <div className='bullet smallerText'>- Secured confidential user data with Azure Keyvault</div>
+                    <div className='bullet smallerText'>- Focused on speed, accuracy, and security</div>
+                    <div className='bullet smallerText'>- Ultimately scrapped due overdependence on 3rd party systems</div>
                   </div>
                 </div>
               }

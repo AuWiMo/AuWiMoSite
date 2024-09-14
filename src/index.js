@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import Home from './pages/home';
+import LMC3404 from './pages/lmc3403';
 import BardicSongbook from './pages/bardicsongbook';
 
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
@@ -14,7 +15,7 @@ ReactDOM.render(
       <Route path="*" element={<Home/>} />
       <Route path="/" element = {<Home/>}></Route>
 
-      <Route path="/home" element = {<BardicSongbook/>}></Route>
+      <Route path="/lmc3403" element = {<LMC3404/>}></Route>
       
       <Route path="/bardicsongbook" element = {<BardicSongbook/>}></Route>
 

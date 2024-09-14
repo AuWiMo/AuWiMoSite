@@ -102,6 +102,11 @@
   padding-block: 5px;
 }
 
+
+.smallerText {
+  font-size: 12px;
+}
+
 .info_icon {
   position: absolute;
   font-size: 25px;
