@@ -1,5 +1,6 @@
 import React from 'react';
 import '../components/home/home.css';
+import '../components/home/3403.css';
 import Header from '../components/home/Header'; 
 import Divider from '../components/home/MatrixDivider';
 import FlipCard from '../components/FlipCard/FlipCard';
@@ -34,7 +35,6 @@ import OfficeImage from '../components/home/skills_images/office.png';
 import BlenderImage from '../components/home/skills_images/blender.svg';
 import ElectronImage from '../components/home/skills_images/electron.svg';
 
-import Resume from '../components/home/myresume.pdf';
 //import FileImage from '../components/home/skills_images/file.svg';
 import DownloadImage from '../components/home/skills_images/download.svg';
 
@@ -71,7 +71,7 @@ function Home() {
             <div id="nameplate" style={{ color: "lime", textShadow: `0px 0px 1px black`,
             }} className='matrix_font'>AUSTIN MORRIS</div>
             <div style={{ maxWidth: '466px'}} >
-              <div style={{ textAlign: 'center'}} className='matrix_font intro_text'>I am a software engineer with experience in game development, cloud systems, web development, and automation finishing the final semester of my bachelors  in computer science at the Georgia Institute of Technology. I interned this summer at SendSafely, where I found a place to learn and grow while contributing greatly to the team; I will be returning there full time in January 2025.  I like to dive into creative endeavors, particularly investigating high-tech and cutting edge technologies such as new techniques for artificial intelligence and procedural/adaptive content generation. Why should I cling desperately to the antiquities of yesterday when I could be creating the tools of tomorrow?
+              <div style={{ textAlign: 'center'}} className='matrix_font 3403'>I am a software engineer with experience in game development, cloud systems, web development, and automation finishing the final semester of my bachelors  in computer science at the Georgia Institute of Technology. I interned this summer at SendSafely, where I found a place to learn and grow while contributing greatly to the team; I will be returning there full time in January 2025.  I like to dive into creative endeavors, particularly investigating high-tech and cutting edge technologies such as new techniques for artificial intelligence and procedural/adaptive content generation. Why should I cling desperately to the antiquities of yesterday when I could be creating the tools of tomorrow?
 
 </div>
             </div>
@@ -166,7 +166,6 @@ function Home() {
               name='Doodle Dice Monsters'
               short_desc='Synchronous Multiplayer Game'
               role='Full Stack Game Developer'
-              dates="(Complicated - Present)"
               description={
                 <div className='project_description'>
                   <div>
@@ -193,11 +192,11 @@ function Home() {
               description={
                 <div className='project_description'>
                   <div>
-                    <div className='bullet smallerText'>- Set Up, Integrated, and Managed Azure Cosmos Database</div>
-                    <div className='bullet smallerText'>- Set up CI/CD Workflow with Git Actions</div>
-                    <div className='bullet smallerText'>- Secured confidential user data with Azure Keyvault</div>
-                    <div className='bullet smallerText'>- Focused on speed, accuracy, and security</div>
-                    <div className='bullet smallerText'>- Ultimately scrapped due overdependence on 3rd party systems</div>
+                    <div className='bullet'>- Set Up, Integrated, and Managed Azure Cosmos Database</div>
+                    <div className='bullet '>- Set up CI/CD Workflow with Git Actions</div>
+                    <div className='bullet '>- Secured confidential user data with Azure Keyvault</div>
+                    <div className='bullet '>- Focused on speed, accuracy, and security</div>
+                    <div className='bullet '>- Ultimately scrapped due overdependence on 3rd party systems</div>
                   </div>
                 </div>
               }
@@ -313,9 +312,9 @@ function Home() {
         <Divider randomFactor={15} id="resume"/>
         <div className='matrix_font section_header'>RESUME</div>
 
-       <a rel="noreferrer" href={Resume} download="AustinMorrisResume.pdf" className="contactBox" style={{ height: '50px', width: '300px' }}>
+       <a rel="noreferrer" href="../resumePage" className="contactBox" style={{ height: '50px', width: '300px' }} target="_blank">
           <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '20px', alignItems: 'center', width: '250px'}}>
-            <div className='category_header matrix_font' style={{margin: '0px'}}>DOWNLOAD</div>
+            <div className='category_header matrix_font' style={{margin: '0px'}}>OPEN</div>
             <div className='matrix_font filename'>Resume 2024-09-13.pdf</div>
 
           </div>

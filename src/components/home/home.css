@@ -112,7 +112,6 @@
   padding-right: 153px;
 }
 
-
 .sideways_text {
   transform: rotate(-90deg);
   transform-origin: center; /* Adjust the transform origin as needed */
@@ -166,6 +165,7 @@
 .download_logo {
   height: 50px;
   margin-right: 20px;
+  transform: rotateZ(-90deg);
 }
 
 .filename {

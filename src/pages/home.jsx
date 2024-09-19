@@ -34,7 +34,6 @@ import OfficeImage from '../components/home/skills_images/office.png';
 import BlenderImage from '../components/home/skills_images/blender.svg';
 import ElectronImage from '../components/home/skills_images/electron.svg';
 
-import Resume from '../components/home/myresume.pdf';
 //import FileImage from '../components/home/skills_images/file.svg';
 import DownloadImage from '../components/home/skills_images/download.svg';
 
@@ -306,9 +305,9 @@ function Home() {
         <Divider randomFactor={15} id="resume"/>
         <div className='matrix_font section_header'>RESUME</div>
 
-       <a rel="noreferrer" href={Resume} download="AustinMorrisResume.pdf" className="contactBox" style={{ height: '50px', width: '300px' }}>
+        <a rel="noreferrer" href="../resumePage" className="contactBox" style={{ height: '50px', width: '300px' }} target="_blank">
           <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', margin: '20px', alignItems: 'center', width: '250px'}}>
-            <div className='category_header matrix_font' style={{margin: '0px'}}>DOWNLOAD</div>
+            <div className='category_header matrix_font' style={{margin: '0px'}}>OPEN</div>
             <div className='matrix_font filename'>Resume 2024-09-13.pdf</div>
 
           </div>
